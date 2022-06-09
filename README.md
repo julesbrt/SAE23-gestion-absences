@@ -17,3 +17,26 @@ Vous devez implémenter un CRUD pour chacun de ces types de données. vous prép
 Votre site web devra permettre la saisie de nouveaux cours et d'absences à ce cours. Vous devrez aussi pouvoir valider l'absence et insérer des justificatifs . Vous devrez aussi pouvoir insérer les absences d'un cours  l'aide d'un fichier. La structure du fichier attendu devra bien sur être décrite soit dans une aide, soit en préambule de la page de chargement.
 
 Vous devrez être à même de pouvoir générer une fiche de liste des absences d'un cours. Vous pourrez aussi générer la listes des absences d'un étudiant avec le total justifié et non justifié de ses absences. 
+
+Les ressources utilisées sont les suivantes :
+
+    R107 | fondamentaux de la programmation
+    
+    R108 | base des systèmes d'exploitation
+    
+    R109 | introduction aux technologies web
+    
+    R207 | sources de données
+    
+    R208 | traitement des données
+    
+    R209 | initiation au développement web
+    
+    R210 | anglais 
+    
+    R211 | expression et communication
+    
+    R212 | PPP
+    
+    R213 | mathématiques des systèmes numériques
+    
