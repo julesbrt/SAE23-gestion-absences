@@ -1,6 +1,6 @@
 # SAE23-gestion-absences
 
-Ce sujet va vous permettre de fournir une interface de gestion des absences du département. Le gestionnaires pourra saisir les absences à différents cours et saisir par la suite une justification Le schéma de données est le suivant
+#  Ce sujet va vous permettre de fournir une interface de gestion des absences du département. Le gestionnaires pourra saisir les absences à différents cours et saisir par la suite une justification Le schéma de données est le suivant
 
 des groupes d'étudiants (id, nom)
 des étudiants (id, nom, prénom, email, groupe, photo)
