@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-&70smve8$ij_-b91-(qye*y_%dogow=g@)gu=#_aym81b%fpv#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [#l'adresse Ip de la VM et le port (80)
+    ]
 
 
 # Application definition
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'sae23.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gestion-absences',
+        'USER': 'root',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'PASSWORD': 'toto',
     }
 }
 
