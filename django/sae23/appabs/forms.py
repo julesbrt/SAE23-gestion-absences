@@ -6,12 +6,12 @@ class AbsencesForm(ModelForm):
     class Meta:
         model = models.Absences
 
-        fields = ('idabsences', 'idetudiants', 'idcours', 'justificationcours', 'docjustcours')
+        fields = ('idabsences', 'idetudiants', 'idcours', 'jutsificationcours', 'docjustcours')
         labels = {
             'idabsences': _('ID absence'),
             'idetudiants': _('ID etudiant'),
             'idcours': _('ID cours'),
-            'justificationcours': _('Justification au cours'),
+            'jutsificationcours': _('Justification au cours'),
             'docjustcours': _('Document de justification'),
         }
 
@@ -33,14 +33,12 @@ class EnseignantsForm(ModelForm):
     class Meta:
         model = models.Enseignants
 
-        fields = ('idetudiants', 'nometudiants', 'prenometudiant', 'emailetudiant', 'idgroupee','photoetudiant')
+        fields = ('idenseignants', 'nomenseignants', 'prenomenseignants', 'emailenseignants')
         labels = {
-            'idetudiants': _('ID enseignants'),
-            'nometudiants': _('Nom enseignats'),
-            'prenometudiant': _('Prenom enseignants'),
-            'emailetudiant': _('Email enseignants'),
-            'idgroupee': _('ID groupe'),
-            'photoetudiant': _('Photo étudiant'),
+            'idenseignants': _('ID enseignants'),
+            'nomenseignants': _('Nom enseignats'),
+            'prenomenseignants': _('Prenom enseignants'),
+            'emailenseignants': _('Email enseignants'),
         }
 
 class EtudiantsForm(ModelForm):

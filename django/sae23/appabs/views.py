@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from . import models
+
 
 # Create your views here.
 
-def acceuil(request):
-    return (request, "appabs/acceuil.html")
+def accueil(request):
+    return render(request, "appabs/accueil.html")

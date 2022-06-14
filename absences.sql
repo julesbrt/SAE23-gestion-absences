@@ -114,6 +114,17 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
+INSERT INTO `gestion-absences`.absences (idAbsences, idEtudiants, idCours, JutsificationCours, DocjustCours) VALUES (1, 1, 1, 1, 'rgerg');
+
+INSERT INTO `gestion-absences`.`groupe-etudiant` (`idGroupe-etudiant`, `nomGroupe-etudiant`) VALUES (1, 'Flavio');
+INSERT INTO `gestion-absences`.`groupe-etudiant` (`idGroupe-etudiant`, `nomGroupe-etudiant`) VALUES (2, 'Curry');
+
+INSERT INTO `gestion-absences`.enseignants (idEnseignants, NomEnseignants, PrenomEnseignants, EmailEnseignants) VALUES (1, 'ttreger', 'zefzg', 'ergegerg');
+
+INSERT INTO `gestion-absences`.cours (idcours, TitreCours, DateCours, idEnseignants, DureeCours, idGroupe) VALUES (1, 'zerge', '2022-06-14', 1, '3', 1);
+
+INSERT INTO `gestion-absences`.etudiants (idetudiants, NomEtudiants, PrenomEtudiant, EmailEtudiant, idGroupeE, PhotoEtudiant) VALUES (1, 'Gacougnolle', 'Yassem', 'yassemgacougnollelebg', 1, 'texte');
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
