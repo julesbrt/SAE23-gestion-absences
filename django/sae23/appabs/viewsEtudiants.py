@@ -24,7 +24,7 @@ def modif(request, id):
 def supprimer(request, id):
     etudiants = models.Etudiants.objects.get(pk=id)
     etudiants.delete()
-    return HttpResponseRedirect("/appabs")
+    return HttpResponseRedirect("/appabs/main/")
 
 def sauvegarder(request, id):
     eform = EtudiantsForm(request.POST)
@@ -32,6 +32,6 @@ def sauvegarder(request, id):
         enseignants = eform.save(commit=False)
         enseignants.id = id
         enseignants.save()
-        return HttpResponseRedirect("/appabs")
+        return HttpResponseRedirect("/appabs/main/")
     else:
         return render(request, "appabs/ajoutetu.html", {"form": eform, "id": id})

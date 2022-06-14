@@ -4,5 +4,6 @@ from . import models
 
 # Create your views here.
 
-def accueil(request):
-    return render(request, "appabs/accueil.html")
+def main(request):
+    absences = models.Absences.objects.all()
+    return render(request, "appabs/main.html",{"absences": absences})

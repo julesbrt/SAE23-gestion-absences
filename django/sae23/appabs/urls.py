@@ -2,13 +2,15 @@ from django.urls import path
 from . import views, viewsAbsences, viewsCours, viewsEtudiants, viewsGroupeEtudiants, viewsEnseignants
 
 urlpatterns = [
-    path('accueil/', views.accueil),
+    path('main/', views.main),
 
     path('absences/ajout', viewsAbsences.ajout),
-    path('absences/affiche', viewsAbsences.affiche),
-    path('absences/modifier', viewsAbsences.modif),
-    path('absences/supprimer', viewsAbsences.supprimer),
-    path('absences/sauvegarder', viewsAbsences.sauvegarder),
+    path('absences/sauvegarder//', viewsAbsences.sauvegarder),
+    path('absences/affiche/', viewsAbsences.affiche),
+    path('absences/modifier/<int:id>/', viewsAbsences.modif),
+    path('absences/supprimer/<int:id>/', viewsAbsences.supprimer),
+    path('absences/updatetraitement/<int:id>/', viewsAbsences.updatesauvegarder),
+    path('absences/updatetraitement//', viewsAbsences.sauvegarder),
 
     path('cours/ajout', viewsCours.ajout),
     path('cours/affiche', viewsCours.affiche),

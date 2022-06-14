@@ -1,0 +1,26 @@
+{% extends "appabs/main.html" %}
+
+{% block title %}
+Ajout d'un groupe
+{% endblock %}
+{%block content %}
+<h1 class="text-center my-3">Ajouter un groupe</h1>
+
+{% if id != '' %}
+<form action="/appabs/grpetudiants/sauvegarder/{{id}}/" method="post">
+
+    {% else %}
+    <form action="/appabs/grpetudiants/affiche/" method="post">
+        {% endif %}
+
+        {% csrf_token %}
+        <div class="text-center">
+            {{form.as_ul}}
+        </div>
+
+        <input class="btn btn-danger mx-1" type="submit" value="Ajouter le groupe"/>
+        <a class="btn btn-dark" href="/appabs/main/">Index</a>
+
+    </form>
+</form>
+{% endblock %}

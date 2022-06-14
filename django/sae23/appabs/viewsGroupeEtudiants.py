@@ -24,7 +24,7 @@ def modif(request, id):
 def supprimer(request, id):
     groupeetu = models.GroupeEtudiant.objects.get(pk=id)
     groupeetu.delete()
-    return HttpResponseRedirect("/appabs")
+    return HttpResponseRedirect("/appabs/main/")
 
 def sauvegarder(request, id):
     gform = GroupeEtudiantForm(request.POST)
@@ -32,6 +32,6 @@ def sauvegarder(request, id):
         groupeetu = gform.save(commit=False)
         groupeetu.id = id
         groupeetu.save()
-        return HttpResponseRedirect("/appabs")
+        return HttpResponseRedirect("/appabs/main/")
     else:
         return render(request, "appabs/ajoutgrp.html", {"form": gform, "id": id})

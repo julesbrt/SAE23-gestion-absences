@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'appabs/css/bootstrap.css' %}">
+    <title>{% block title %}Gestion des absences{% endblock %}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <ul class="navbar-nav ">
+            <a class="navbar-brand" href="/">
+                <img src=""
+                     width="40" height="40"
+                     class="d-inline-block align-top">
+            </a>
+            <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:8000/appabs/main/">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/appabs/absences/ajout">Ajouter une absences</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/appabs/">Afficher ?</a>
+            </li>
+        </ul>
+    </nav>
+    <h1 class="text-center m-md-3"> Bienvenue le site de gestion des absences</h1>
+</header>
+
+<div>
+    {%block content %}
+    <p>bloc de test</p>
+    <li class="nav-item">
+                <a class="nav-link" href="/appabs/absences/ajout">Ajouter une absences</a>
+            </li>
+    <li class="nav-item">
+                <a class="nav-link" href="/appabs/absences/affiche">Afficher une absences</a>
+            </li>
+
+<table class="table is-fullwidth is-hoverable">
+    <thead>
+    <tr>
+        <th><abbr title="ID">ID</abbr></th>
+        <th>Nom</th>
+        <th>Pays</th>
+        <th class="text-end">Actions</th>
+    </tr>
+    </thead>
+    {% for absences in absences %}
+    <tbody>
+    <tr>
+        <td><a href="">{{absences.idcours}}</a></td>
+        <td>{{absences.idabsences}}</td>
+        <td>{{absences.idetudiants}}</td>
+        <td class="text-end">
+            {% comment %} <a type="button" class="btn btn-primary" href="/avion/details/{{avion.idavion}}/">Détails</a>
+            {% endcomment %}
+            <a type="button" class="btn btn-secondary" href="/aeroport/modif/{{aeroport.idaeroport}}">Modifier</a>
+            <a type="button" class="btn btn-danger" href="/aeroport/suppr/{{aeroport.idaeroport}}">Supprimer</a>
+        </td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+    {% endblock %}
+</div>
+
+</body>
+</html>
