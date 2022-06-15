@@ -1,7 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
 from . import models
 from .forms import AbsencesForm
-from .models import Absences
 
 # Create your views here.
 

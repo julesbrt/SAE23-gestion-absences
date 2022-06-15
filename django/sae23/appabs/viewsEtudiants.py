@@ -26,7 +26,15 @@ def supprimer(request, id):
     etudiants.delete()
     return HttpResponseRedirect("/appabs/main/")
 
-def sauvegarder(request, id):
+def sauvegarder(request):
+    eform = EtudiantsForm(request.POST)
+    if eform.is_valid():
+        etudiants = eform.save()
+        return HttpResponseRedirect("/appabs/main/")
+    else:
+        return render(request, "appabs/ajoutetu.html", {"form": eform})
+
+def updatesauvegarder(request, id):
     eform = EtudiantsForm(request.POST)
     if eform.is_valid():
         enseignants = eform.save(commit=False)

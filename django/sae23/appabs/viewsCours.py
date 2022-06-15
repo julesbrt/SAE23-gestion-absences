@@ -26,7 +26,15 @@ def supprimer(request, id):
     cours.delete()
     return HttpResponseRedirect("/appabs/main/")
 
-def sauvegarder(request, id):
+def sauvegarder(request):
+    cform = CoursForm(request.POST)
+    if cform.is_valid():
+        cours = cform.save()
+        return HttpResponseRedirect("/appabs/main/")
+    else:
+        return render(request, "appabs/ajoutcours.html", {"form": cform})
+
+def updatesauvegarder(request, id):
     cform = CoursForm(request.POST)
     if cform.is_valid():
         cours = cform.save(commit=False)

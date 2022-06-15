@@ -26,7 +26,15 @@ def supprimer(request, id):
     groupeetu.delete()
     return HttpResponseRedirect("/appabs/main/")
 
-def sauvegarder(request, id):
+def sauvegarder(request):
+    gform = GroupeEtudiantForm(request.POST)
+    if gform.is_valid():
+        groupeetu = gform.save()
+        return HttpResponseRedirect("/appabs/main/")
+    else:
+        return render(request, "appabs/ajoutgrp.html", {"form": gform})
+
+def updatesauvegarder(request, id):
     gform = GroupeEtudiantForm(request.POST)
     if gform.is_valid():
         groupeetu = gform.save(commit=False)

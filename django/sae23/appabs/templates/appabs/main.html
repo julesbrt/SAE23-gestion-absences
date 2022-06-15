@@ -31,20 +31,42 @@
 
 <div>
     {%block content %}
-    <p>bloc de test</p>
+    <p>Ajouter une entité</p>
     <li class="nav-item">
                 <a class="nav-link" href="/appabs/absences/ajout">Ajouter une absences</a>
             </li>
     <li class="nav-item">
-                <a class="nav-link" href="/appabs/absences/affiche">Afficher une absences</a>
+                <a class="nav-link" href="/appabs/cours/ajout">Ajouter un cours</a>
             </li>
+    <li class="nav-item">
+                <a class="nav-link" href="/appabs/enseignants/ajout">Ajouter un enseignant</a>
+            </li>
+    <li class="nav-item">
+                <a class="nav-link" href="/appabs/etudiants/ajout">Ajouter un étudiant</a>
+            </li>
+    <li class="nav-item">
+                <a class="nav-link" href="/appabs/grpetudiants/ajout">Ajouter un groupe d'étudiant</a>
+            </li>
+
+
+
+
+
+
+    <li class="nav-item">
+                <a class="nav-link" href="/appabs/absences/affiche/{{absences.idabsences}}">Afficher une absences</a>
+            </li>
+
+
+
+
 
 <table class="table is-fullwidth is-hoverable">
     <thead>
     <tr>
         <th><abbr title="ID">ID</abbr></th>
+        <th>ID</th>
         <th>Nom</th>
-        <th>Pays</th>
         <th class="text-end">Actions</th>
     </tr>
     </thead>
