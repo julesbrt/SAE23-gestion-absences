@@ -12,6 +12,9 @@ urlpatterns = [
     path('absences/updatetraitement/<int:id>/', viewsAbsences.updatesauvegarder),
     path('absences/updatetraitement//', viewsAbsences.sauvegarder),
 
+
+
+
     path('cours/ajout', viewsCours.ajout),
     path('cours/affiche', viewsCours.affiche),
     path('cours/modifier', viewsCours.modif),

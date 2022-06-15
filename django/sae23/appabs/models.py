@@ -12,6 +12,10 @@ class Absences(models.Model):
         managed = False
         db_table = 'absences'
 
+    def dico(self):
+        return {"idAbsences": self.idabsences, "idEtudiants": self.idetudiants, "idCours": self.idcours, "JutsificationCours": self.jutsificationcours,
+                "DocjustCours": self.docjustcours}
+
 
 class Cours(models.Model):
     idcours = models.IntegerField(primary_key=True)

@@ -14,7 +14,7 @@ def ajout(request):
         return render(request, "appabs/ajoutabs.html", {"form": form})
 
 def affiche(request, id):
-    absences = models.Absences.objects.all()
+    absences = models.Absences.objects.get(pk=id)
     return render(request, "appabs/afficheabs.html", {"absences": absences})
 
 def modif(request, id):

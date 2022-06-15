@@ -7,4 +7,31 @@
 <h5 class="text-center m-md-5">
     {{absences}}
 </h5>
+
+<table class="table is-fullwidth is-hoverable">
+    <thead>
+    <tr>
+        <th><abbr title="ID">ID</abbr></th>
+        <th>Nom</th>
+        <th>Pays</th>
+        <th class="text-end">Actions</th>
+    </tr>
+    </thead>
+    {% for absences in absences %}
+    <tbody>
+    <tr>
+        <td><a href="">{{absences.idcours}}</a></td>
+        <td>{{absences.idabsences}}</td>
+        <td>{{absences.idetudiants}}</td>
+        <td class="text-end">
+            {% comment %} <a type="button" class="btn btn-primary" href="/avion/details/{{avion.idavion}}/">Détails</a>
+            {% endcomment %}
+            <a type="button" class="btn btn-secondary" href="/aeroport/modif/{{aeroport.idaeroport}}">Modifier</a>
+            <a type="button" class="btn btn-danger" href="/aeroport/suppr/{{aeroport.idaeroport}}">Supprimer</a>
+        </td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
 {% endblock %}

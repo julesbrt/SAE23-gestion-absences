@@ -55,15 +55,16 @@
         <td>{{absences.idabsences}}</td>
         <td>{{absences.idetudiants}}</td>
         <td class="text-end">
-            {% comment %} <a type="button" class="btn btn-primary" href="/avion/details/{{avion.idavion}}/">Détails</a>
+            {% comment %} <a type="button" class="btn btn-primary" href="/appabs/absences/affiche/{{absences.idabsences}}/">Détails</a>
             {% endcomment %}
-            <a type="button" class="btn btn-secondary" href="/aeroport/modif/{{aeroport.idaeroport}}">Modifier</a>
-            <a type="button" class="btn btn-danger" href="/aeroport/suppr/{{aeroport.idaeroport}}">Supprimer</a>
+            <a type="button" class="btn btn-secondary" href="/appabs/absences/modifier/{{absences.idabsences}}">Modifier</a>
+            <a type="button" class="btn btn-danger" href="/appabs/absences/supprimer/{{absences.idabsences}}">Supprimer</a>
         </td>
     </tr>
     </tbody>
     {% endfor %}
 </table>
+
     {% endblock %}
 </div>
 
