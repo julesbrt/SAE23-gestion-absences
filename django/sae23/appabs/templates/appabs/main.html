@@ -8,10 +8,10 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
         <ul class="navbar-nav ">
             <a class="navbar-brand" href="/">
-                <img src=""
+                <img src="https://www.crushpixel.com/big-static18/preview4/absence-2781046.jpg"
                      width="40" height="40"
                      class="d-inline-block align-top">
             </a>
@@ -22,45 +22,59 @@
                 <a class="nav-link" href="/appabs/absences/ajout">Ajouter une absences</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/appabs/">Afficher ?</a>
+                <a class="nav-link" href="/appabs/cours/ajout">Ajouter un cours</a>
             </li>
         </ul>
     </nav>
     <h1 class="text-center m-md-3"> Bienvenue le site de gestion des absences</h1>
 </header>
 
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {%block content %}
+            <h2>Ajouter une entité : </h2>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-info" href="/appabs/absences/ajout">Ajouter une absences</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-primary" href="/appabs/cours/ajout">Ajouter un cours</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-success" href="/appabs/enseignants/ajout">Ajouter un enseignant</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-secondary" href="/appabs/etudiants/ajout">Ajouter un étudiant</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-dark" href="/appabs/grpetudiants/ajout">Ajouter un groupe d'étudiant</a>
+                    </li>
+
+        </div>
+        <div class="col">
+            <h2>Afficher une entité : </h2>
+
+            <li class="nav-item">
+                        <a type="button" class="btn btn-info"  href="/appabs/absences/affiche/{{absences.idabsences}}">Afficher une absences</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-primary"  href="/appabs/cours/affiche">Afficher un cours</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-success"  href="/appabs/enseignants/affiche">Afficher un enseignant</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-secondary"  href="/appabs/etudiants/affiche">Afficher un étudiant</a>
+                    </li>
+            <li class="nav-item">
+                        <a type="button" class="btn btn-dark"  href="/appabs/grpetudiants/affiche">Afficher un groupe d'étudiant</a>
+                    </li>
+        </div>
+    </div>
+</div>
+
+
 <div>
-    {%block content %}
-    <p>Ajouter une entité</p>
-    <li class="nav-item">
-                <a class="nav-link" href="/appabs/absences/ajout">Ajouter une absences</a>
-            </li>
-    <li class="nav-item">
-                <a class="nav-link" href="/appabs/cours/ajout">Ajouter un cours</a>
-            </li>
-    <li class="nav-item">
-                <a class="nav-link" href="/appabs/enseignants/ajout">Ajouter un enseignant</a>
-            </li>
-    <li class="nav-item">
-                <a class="nav-link" href="/appabs/etudiants/ajout">Ajouter un étudiant</a>
-            </li>
-    <li class="nav-item">
-                <a class="nav-link" href="/appabs/grpetudiants/ajout">Ajouter un groupe d'étudiant</a>
-            </li>
-
-
-
-
-
-
-    <li class="nav-item">
-                <a class="nav-link" href="/appabs/absences/affiche/{{absences.idabsences}}">Afficher une absences</a>
-            </li>
-
-
-
-
-
 <table class="table is-fullwidth is-hoverable">
     <thead>
     <tr>
@@ -76,6 +90,7 @@
         <td><a href="">{{absences.idcours}}</a></td>
         <td>{{absences.idabsences}}</td>
         <td>{{absences.idetudiants}}</td>
+        <td>{{absences.jutsificationcours}}</td>
         <td class="text-end">
             {% comment %} <a type="button" class="btn btn-primary" href="/appabs/absences/affiche/{{absences.idabsences}}/">Détails</a>
             {% endcomment %}
@@ -91,4 +106,9 @@
 </div>
 
 </body>
+<footer>
+    <div class="card-footer text-muted">
+        SAE 23 : Gestion d'absences.
+    </div>
+</footer>
 </html>

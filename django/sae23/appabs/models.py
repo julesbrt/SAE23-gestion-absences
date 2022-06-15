@@ -5,7 +5,7 @@ class Absences(models.Model):
     idabsences = models.IntegerField(db_column='idAbsences', primary_key=True)  # Field name made lowercase.
     idetudiants = models.ForeignKey('Etudiants', models.DO_NOTHING, db_column='idEtudiants')  # Field name made lowercase.
     idcours = models.ForeignKey('Cours', models.DO_NOTHING, db_column='idCours')  # Field name made lowercase.
-    jutsificationcours = models.IntegerField(db_column='JutsificationCours')  # Field name made lowercase.
+    jutsificationcours = models.BooleanField(db_column='JutsificationCours')  # Field name made lowercase.
     docjustcours = models.CharField(db_column='DocjustCours', max_length=255)  # Field name made lowercase.
 
     class Meta:
