@@ -6,7 +6,7 @@ class Absences(models.Model):
     idetudiants = models.ForeignKey('Etudiants', models.DO_NOTHING, db_column='idEtudiants')  # Field name made lowercase.
     idcours = models.ForeignKey('Cours', models.DO_NOTHING, db_column='idCours')  # Field name made lowercase.
     jutsificationcours = models.BooleanField(db_column='JutsificationCours')  # Field name made lowercase.
-    docjustcours = models.CharField(db_column='DocjustCours', max_length=255)  # Field name made lowercase.
+    docjustcours = models.ImageField(db_column='DocjustCours', max_length=255, upload_to="images/")  # Field name made lowercase.
 
     def __str__(self):
         return f"Justifié : {self.jutsificationcours}"

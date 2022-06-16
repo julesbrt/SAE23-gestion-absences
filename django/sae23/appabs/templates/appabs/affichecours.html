@@ -14,6 +14,7 @@ Cours
         <th>Titre du cours</th>
         <th>Date</th>
         <th>Enseignant</th>
+        <th>Groupe</th>
         <th class="text-end">Actions</th>
     </tr>
     </thead>
@@ -24,6 +25,7 @@ Cours
         <td>{{cours.titrecours}}</td>
         <td>{{cours.datecours}}</td>
         <td>{{cours.idenseignants.nomenseignants}}</td>
+        <td>{{cours.idgroupe.nomgroupe_etudiant}}</td>
         <td class="text-end">
             <a type="button" class="btn btn-secondary" href="/appabs/cours/modif/{{cours.idcours}}">Modifier</a>
             <a type="button" class="btn btn-danger" href="/appabs/cours/supprimer/{{cours.idcours}}">Supprimer</a>

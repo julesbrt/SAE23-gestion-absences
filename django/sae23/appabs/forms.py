@@ -8,11 +8,11 @@ class AbsencesForm(ModelForm):
 
         fields = ('idabsences', 'idetudiants', 'idcours', 'jutsificationcours', 'docjustcours')
         labels = {
-            'idabsences': _('ID absence'),
-            'idetudiants': _('ID etudiant'),
-            'idcours': _('ID cours'),
-            'jutsificationcours': _('Justification au cours'),
-            'docjustcours': _('Document de justification'),
+            'idabsences': _('ID absence '),
+            'idetudiants': _('ID étudiant '),
+            'idcours': _('ID cours '),
+            'jutsificationcours': _('Justification au cours '),
+            'docjustcours': _('Document de justification (en format .jpg) '),
         }
 
 class CoursForm(ModelForm):
