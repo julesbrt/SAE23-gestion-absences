@@ -1,12 +1,16 @@
 from django.shortcuts import render, HttpResponseRedirect
 from . import models
 from .forms import CoursForm
+from django.forms.models import model_to_dict
 
 # Create your views here.
 
 def ajout(request):
     if request.method == "POST":
-        form = CoursForm(request)
+        form = CoursForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/appabs/cours/affiche/")
         return render(request, "appabs/ajoutcours.html", {"form": form})
     else:
         form = CoursForm()
@@ -18,7 +22,7 @@ def affiche(request):
 
 def modif(request, id):
     cours = models.Cours.objects.get(pk=id)
-    form = CoursForm(cours.dico())
+    form = CoursForm(model_to_dict(cours))
     return render(request, "appabs/ajoutcours.html", {"form": form, "id": id})
 
 def supprimer(request, id):
@@ -26,19 +30,11 @@ def supprimer(request, id):
     cours.delete()
     return HttpResponseRedirect("/appabs/main/")
 
-def sauvegarder(request):
-    cform = CoursForm(request.POST)
-    if cform.is_valid():
-        cours = cform.save()
-        return HttpResponseRedirect("/appabs/main/")
-    else:
-        return render(request, "appabs/ajoutcours.html", {"form": cform})
-
 def updatesauvegarder(request, id):
     cform = CoursForm(request.POST)
     if cform.is_valid():
         cours = cform.save(commit=False)
-        cours.id = id
+        cours.idcours = id
         cours.save()
         return HttpResponseRedirect("/appabs/main/")
     else:

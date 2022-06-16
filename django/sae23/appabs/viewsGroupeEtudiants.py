@@ -1,12 +1,16 @@
 from django.shortcuts import render, HttpResponseRedirect
 from . import models
 from .forms import GroupeEtudiantForm
+from django.forms.models import model_to_dict
 
 # Create your views here.
 
 def ajout(request):
     if request.method == "POST":
-        form = GroupeEtudiantForm(request)
+        form = GroupeEtudiantForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/appabs/grpetudiants/affiche/")
         return render(request, "appabs/ajoutgrp.html", {"form": form})
     else:
         form = GroupeEtudiantForm()
@@ -18,7 +22,7 @@ def affiche(request):
 
 def modif(request, id):
     groupeetu = models.GroupeEtudiant.objects.get(pk=id)
-    form = GroupeEtudiantForm(groupeetu.dico())
+    form = GroupeEtudiantForm(model_to_dict(groupeetu))
     return render(request, "appabs/ajoutgrp.html", {"form": form, "id": id})
 
 def supprimer(request, id):
@@ -26,19 +30,11 @@ def supprimer(request, id):
     groupeetu.delete()
     return HttpResponseRedirect("/appabs/main/")
 
-def sauvegarder(request):
-    gform = GroupeEtudiantForm(request.POST)
-    if gform.is_valid():
-        groupeetu = gform.save()
-        return HttpResponseRedirect("/appabs/main/")
-    else:
-        return render(request, "appabs/ajoutgrp.html", {"form": gform})
-
 def updatesauvegarder(request, id):
     gform = GroupeEtudiantForm(request.POST)
     if gform.is_valid():
         groupeetu = gform.save(commit=False)
-        groupeetu.id = id
+        groupeetu.idgroupeetu = id
         groupeetu.save()
         return HttpResponseRedirect("/appabs/main/")
     else:

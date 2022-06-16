@@ -1,12 +1,16 @@
 from django.shortcuts import render, HttpResponseRedirect
 from . import models
 from .forms import EnseignantsForm
+from django.forms.models import model_to_dict
 
 # Create your views here.
 
 def ajout(request):
     if request.method == "POST":
-        form = EnseignantsForm(request)
+        form = EnseignantsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/appabs/enseignants/affiche/")
         return render(request, "appabs/ajoutens.html", {"form": form})
     else:
         form = EnseignantsForm()
@@ -18,7 +22,7 @@ def affiche(request):
 
 def modif(request, id):
     enseignants = models.Enseignants.objects.get(pk=id)
-    form = EnseignantsForm(enseignants.dico())
+    form = EnseignantsForm(model_to_dict(enseignants))
     return render(request, "appabs/ajoutens.html", {"form": form, "id": id})
 
 def supprimer(request, id):
@@ -26,19 +30,11 @@ def supprimer(request, id):
     enseignants.delete()
     return HttpResponseRedirect("/appabs/main/")
 
-def sauvegarder(request):
-    eform = EnseignantsForm(request.POST)
-    if eform.is_valid():
-        enseignants = eform.save()
-        return HttpResponseRedirect("/appabs/main/")
-    else:
-        return render(request, "appabs/ajoutens.html", {"form": eform})
-
 def updatesauvegarder(request, id):
     eform = EnseignantsForm(request.POST)
     if eform.is_valid():
         enseignants = eform.save(commit=False)
-        enseignants.id = id
+        enseignants.idenseignants = id
         enseignants.save()
         return HttpResponseRedirect("/appabs/main/")
     else:

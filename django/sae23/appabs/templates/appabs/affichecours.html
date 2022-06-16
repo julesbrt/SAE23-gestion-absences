@@ -19,13 +19,12 @@ Cours
     {% for cours in cours %}
     <tbody>
     <tr>
-        <td><a href="">{{cours.idcours}}</a></td>
+        <td><a href="/appabs/absences/affiche/">{{cours.idcours}}</a></td>
         <td>{{cours.titrecours}}</td>
         <td>{{cours.datecours}}</td>
+        <td>{{cours.idenseignants.nomenseignants}}</td>
         <td class="text-end">
-            {% comment %} <a type="button" class="btn btn-primary" href="/avion/details/{{avion.idavion}}/">Détails</a>
-            {% endcomment %}
-            <a type="button" class="btn btn-secondary" href="/appabs/modif/{{aeroport.idaeroport}}">Modifier</a>
+            <a type="button" class="btn btn-secondary" href="/appabs/cours/modif/{{cours.idcours}}">Modifier</a>
             <a type="button" class="btn btn-danger" href="/appabs/cours/supprimer/{{cours.idcours}}">Supprimer</a>
         </td>
     </tr>

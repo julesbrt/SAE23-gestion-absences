@@ -8,13 +8,12 @@ class Absences(models.Model):
     jutsificationcours = models.BooleanField(db_column='JutsificationCours')  # Field name made lowercase.
     docjustcours = models.CharField(db_column='DocjustCours', max_length=255)  # Field name made lowercase.
 
+    def __str__(self):
+        return f"Justifié : {self.jutsificationcours}"
+
     class Meta:
         managed = False
         db_table = 'absences'
-
-    def dico(self):
-        return {"idAbsences": self.idabsences, "idEtudiants": self.idetudiants, "idCours": self.idcours, "JutsificationCours": self.jutsificationcours,
-                "DocjustCours": self.docjustcours}
 
 
 class Cours(models.Model):
@@ -24,6 +23,9 @@ class Cours(models.Model):
     idenseignants = models.ForeignKey('Enseignants', models.DO_NOTHING, db_column='idEnseignants')  # Field name made lowercase.
     dureecours = models.CharField(db_column='DureeCours', max_length=45)  # Field name made lowercase.
     idgroupe = models.ForeignKey('GroupeEtudiant', models.DO_NOTHING, db_column='idGroupe')  # Field name made lowercase.
+
+    def __str__(self):
+        return f"{self.titrecours} {self.dureecours}"
 
     class Meta:
         managed = False
@@ -35,6 +37,9 @@ class Enseignants(models.Model):
     nomenseignants = models.CharField(db_column='NomEnseignants', max_length=45)  # Field name made lowercase.
     prenomenseignants = models.CharField(db_column='PrenomEnseignants', max_length=45)  # Field name made lowercase.
     emailenseignants = models.CharField(db_column='EmailEnseignants', max_length=45)  # Field name made lowercase.
+
+    def __str__(self):
+        return f"{self.nomenseignants} {self.prenomenseignants}"
 
     class Meta:
         managed = False
@@ -60,6 +65,9 @@ class Etudiants(models.Model):
 class GroupeEtudiant(models.Model):
     idgroupe_etudiant = models.IntegerField(db_column='idGroupe-etudiant', primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters.
     nomgroupe_etudiant = models.CharField(db_column='nomGroupe-etudiant', max_length=45)  # Field name made lowercase. Field renamed to remove unsuitable characters.
+
+    def __str__(self):
+        return f"{self.nomgroupe_etudiant}"
 
     class Meta:
         managed = False

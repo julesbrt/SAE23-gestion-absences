@@ -19,13 +19,12 @@ Enseignats
     {% for enseignants in enseignants %}
     <tbody>
     <tr>
-        <td><a href="">{{enseignants.idenseignants}}</a></td>
+        <td><a href="/appabs/enseignants/affiche/">{{enseignants.idenseignants}}</a></td>
         <td>{{enseignants.nomenseignants}}</td>
         <td>{{enseignants.prenomenseignants}}</td>
+        <td>{{enseignants.emailenseignants}}</td>
         <td class="text-end">
-            {% comment %} <a type="button" class="btn btn-primary" href="/avion/details/{{avion.idavion}}/">Détails</a>
-            {% endcomment %}
-            <a type="button" class="btn btn-secondary" href="/aeroport/modif/{{aeroport.idaeroport}}">Modifier</a>
+            <a type="button" class="btn btn-secondary" href="/appabs/enseignants/modif/{{enseignants.idenseignants}}">Modifier</a>
             <a type="button" class="btn btn-danger" href="/appabs/enseignants/supprimer/{{enseignants.idenseignants}}">Supprimer</a>
         </td>
     </tr>

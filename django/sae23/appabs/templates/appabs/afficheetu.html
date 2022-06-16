@@ -19,13 +19,13 @@ Etudiants
     {% for etudiants in etudiants %}
     <tbody>
     <tr>
-        <td><a href="">{{etudiants.idetudiants}}</a></td>
+        <td><a href="/appabs/etudiants/affiche/">{{etudiants.idetudiants}}</a></td>
         <td>{{etudiants.nometudiants}}</td>
         <td>{{etudiants.prenometudiant}}</td>
+        <td>{{etudiants.emailetudiant}</td>
+        <td>{{etudiants.idgroupee.nomgroupe_etudiant}</td>
         <td class="text-end">
-            {% comment %} <a type="button" class="btn btn-primary" href="/avion/details/{{avion.idavion}}/">Détails</a>
-            {% endcomment %}
-            <a type="button" class="btn btn-secondary" href="/aeroport/modif/{{aeroport.idaeroport}}">Modifier</a>
+            <a type="button" class="btn btn-secondary" href="/appabs/etudiants/modif/{{etudiants.idetudiants}}">Modifier</a>
             <a type="button" class="btn btn-danger" href="/appabs/etudiants/supprimer/{{etudiants.idetudiants}}">Supprimer</a>
         </td>
     </tr>
