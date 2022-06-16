@@ -7,10 +7,10 @@ Ajout d'un enseignant
 <h1 class="text-center my-3">Ajouter un enseignant</h1>
 
 {% if id != '' %}
-<form action="/appabs/enseignants/sauvegarder/" method="post">
+<form action="" method="post">
 
     {% else %}
-    <form action="/appabs/enseignants/affiche/" method="post">
+    <form action="" method="post">
         {% endif %}
 
         {% csrf_token %}
