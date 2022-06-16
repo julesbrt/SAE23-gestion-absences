@@ -7,7 +7,7 @@ Ajout d'un étudiant
 <h1 class="text-center my-3">Ajouter un étudiant</h1>
 
 {% if id != '' %}
-<form action="/appabs/etudiants/updatetraitement//" method="post">
+<form action="/appabs/etudiants/updatesauvegarder/" method="post">
 
     {% else %}
     <form action="/appabs/etudiants/affiche/" method="post">
@@ -18,7 +18,7 @@ Ajout d'un étudiant
             {{form.as_ul}}
         </div>
 
-        <input class="btn btn-danger mx-1" type="submit" value="Ajouter l'étudiant"/>
+        <input class="btn btn-danger mx-1" type="submit" value="Modifier l'étudiant"/>
         <a class="btn btn-dark" href="/appabs/main/">Index</a>
 
     </form>

@@ -23,7 +23,7 @@ def affiche(request):
 def modif(request, id):
     cours = models.Cours.objects.get(pk=id)
     form = CoursForm(model_to_dict(cours))
-    return render(request, "appabs/ajoutcours.html", {"form": form, "id": id})
+    return render(request, "appabs/modifcours.html", {"form": form, "id": id})
 
 def supprimer(request, id):
     cours = models.Cours.objects.get(pk=id)

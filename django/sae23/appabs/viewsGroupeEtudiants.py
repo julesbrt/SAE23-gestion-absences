@@ -23,7 +23,7 @@ def affiche(request):
 def modif(request, id):
     groupeetu = models.GroupeEtudiant.objects.get(pk=id)
     form = GroupeEtudiantForm(model_to_dict(groupeetu))
-    return render(request, "appabs/ajoutgrp.html", {"form": form, "id": id})
+    return render(request, "appabs/modifgrp.html", {"form": form, "id": id})
 
 def supprimer(request, id):
     groupeetu = models.GroupeEtudiant.objects.get(pk=id)
