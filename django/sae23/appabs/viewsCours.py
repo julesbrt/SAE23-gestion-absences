@@ -12,8 +12,8 @@ def ajout(request):
         form = CoursForm()
         return render(request, "appabs/ajoutcours.html", {"form": form})
 
-def affiche(request, id):
-    cours = models.Cours.objects.get(pk=id)
+def affiche(request):
+    cours = models.Cours.objects.all()
     return render(request, "appabs/affichecours.html", {"cours": cours})
 
 def modif(request, id):

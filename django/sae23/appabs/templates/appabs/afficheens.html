@@ -1,10 +1,36 @@
 {% extends "appabs/main.html" %}
 
 {% block title %}
-{{enseignants.nomenseignants}}
+Enseignats
 {% endblock %}
 {%block content %}
 <h5 class="text-center m-md-5">
-    {{enseignants}}
 </h5>
+
+<table class="table is-fullwidth is-hoverable">
+    <thead>
+    <tr>
+        <th><abbr title="ID">ID</abbr></th>
+        <th>Nom</th>
+        <th>Pays</th>
+        <th class="text-end">Actions</th>
+    </tr>
+    </thead>
+    {% for enseignants in enseignants %}
+    <tbody>
+    <tr>
+        <td><a href="">{{enseignants.idenseignants}}</a></td>
+        <td>{{enseignants.nomenseignants}}</td>
+        <td>{{enseignants.prenomenseignants}}</td>
+        <td class="text-end">
+            {% comment %} <a type="button" class="btn btn-primary" href="/avion/details/{{avion.idavion}}/">Détails</a>
+            {% endcomment %}
+            <a type="button" class="btn btn-secondary" href="/aeroport/modif/{{aeroport.idaeroport}}">Modifier</a>
+            <a type="button" class="btn btn-danger" href="/appabs/enseignants/supprimer/{{enseignants.idenseignants}}">Supprimer</a>
+        </td>
+    </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
 {% endblock %}

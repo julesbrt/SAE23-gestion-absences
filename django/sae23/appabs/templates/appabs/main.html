@@ -19,7 +19,7 @@
                 <a class="nav-link" href="http://127.0.0.1:8000/appabs/main/">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/appabs/absences/ajout">Ajouter une absences</a>
+                <a class="nav-link" href="/appabs/absences/ajout">Ajouter une absence</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/appabs/cours/ajout">Ajouter un cours</a>
@@ -35,7 +35,7 @@
             {%block content %}
             <h2>Ajouter une entité : </h2>
             <li class="nav-item">
-                        <a type="button" class="btn btn-info" href="/appabs/absences/ajout">Ajouter une absences</a>
+                        <a type="button" class="btn btn-info" href="/appabs/absences/ajout">Ajouter une absence</a>
                     </li>
             <li class="nav-item">
                         <a type="button" class="btn btn-primary" href="/appabs/cours/ajout">Ajouter un cours</a>
@@ -55,7 +55,7 @@
             <h2>Afficher une entité : </h2>
 
             <li class="nav-item">
-                        <a type="button" class="btn btn-info"  href="/appabs/absences/affiche/{{absences.idabsences}}">Afficher une absences</a>
+                        <a type="button" class="btn btn-info"  href="/appabs/absences/affiche/{{absences.idabsences}}">Afficher une absence</a>
                     </li>
             <li class="nav-item">
                         <a type="button" class="btn btn-primary"  href="/appabs/cours/affiche">Afficher un cours</a>
@@ -74,36 +74,9 @@
 </div>
 
 
-<div>
-<table class="table is-fullwidth is-hoverable">
-    <thead>
-    <tr>
-        <th><abbr title="ID">ID</abbr></th>
-        <th>ID</th>
-        <th>Nom</th>
-        <th class="text-end">Actions</th>
-    </tr>
-    </thead>
-    {% for absences in absences %}
-    <tbody>
-    <tr>
-        <td><a href="">{{absences.idcours}}</a></td>
-        <td>{{absences.idabsences}}</td>
-        <td>{{absences.idetudiants}}</td>
-        <td>{{absences.jutsificationcours}}</td>
-        <td class="text-end">
-            {% comment %} <a type="button" class="btn btn-primary" href="/appabs/absences/affiche/{{absences.idabsences}}/">Détails</a>
-            {% endcomment %}
-            <a type="button" class="btn btn-secondary" href="/appabs/absences/modifier/{{absences.idabsences}}">Modifier</a>
-            <a type="button" class="btn btn-danger" href="/appabs/absences/supprimer/{{absences.idabsences}}">Supprimer</a>
-        </td>
-    </tr>
-    </tbody>
-    {% endfor %}
-</table>
 
     {% endblock %}
-</div>
+
 
 </body>
 <footer>

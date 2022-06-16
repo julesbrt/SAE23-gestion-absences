@@ -12,8 +12,8 @@ def ajout(request):
         form = EtudiantsForm()
         return render(request, "appabs/ajoutetu.html", {"form": form})
 
-def affiche(request, id):
-    etudiants = models.Etudiants.objects.get(pk=id)
+def affiche(request):
+    etudiants = models.Etudiants.objects.all()
     return render(request, "appabs/afficheetu.html", {"etudiants": etudiants})
 
 def modif(request, id):
@@ -38,7 +38,7 @@ def updatesauvegarder(request, id):
     eform = EtudiantsForm(request.POST)
     if eform.is_valid():
         enseignants = eform.save(commit=False)
-        enseignants.id = id
+        enseignants.idenseignants = id
         enseignants.save()
         return HttpResponseRedirect("/appabs/main/")
     else:

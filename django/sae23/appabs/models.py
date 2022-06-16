@@ -49,6 +49,9 @@ class Etudiants(models.Model):
     idgroupee = models.ForeignKey('GroupeEtudiant', models.DO_NOTHING, db_column='idGroupeE')  # Field name made lowercase.
     photoetudiant = models.CharField(db_column='PhotoEtudiant', max_length=255)  # Field name made lowercase.
 
+    def __str__(self):
+        return f"{self.nometudiants} {self.prenometudiant}"
+
     class Meta:
         managed = False
         db_table = 'etudiants'

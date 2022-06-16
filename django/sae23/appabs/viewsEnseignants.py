@@ -12,8 +12,8 @@ def ajout(request):
         form = EnseignantsForm()
         return render(request, "appabs/ajoutens.html", {"form": form})
 
-def affiche(request, id):
-    enseignants = models.Enseignants.objects.get(pk=id)
+def affiche(request):
+    enseignants = models.Enseignants.objects.all()
     return render(request, "appabs/afficheens.html", {"enseignants": enseignants})
 
 def modif(request, id):

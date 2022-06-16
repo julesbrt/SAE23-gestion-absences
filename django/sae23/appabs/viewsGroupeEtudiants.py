@@ -12,8 +12,8 @@ def ajout(request):
         form = GroupeEtudiantForm()
         return render(request, "appabs/ajoutgrp.html", {"form": form})
 
-def affiche(request, id):
-    groupeetu = models.GroupeEtudiant.objects.get(pk=id)
+def affiche(request):
+    groupeetu = models.GroupeEtudiant.objects.all()
     return render(request, "appabs/affichegrp.html", {"groupeetu": groupeetu})
 
 def modif(request, id):
