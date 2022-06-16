@@ -11,8 +11,10 @@ Etudiants
     <thead>
     <tr>
         <th><abbr title="ID">ID</abbr></th>
-        <th>Nom</th>
-        <th>Pays</th>
+        <th>Nom étudiant</th>
+        <th>Prénom étudiant</th>
+        <th>Adresse mail</th>
+        <th>Groupe</th>
         <th class="text-end">Actions</th>
     </tr>
     </thead>
@@ -22,8 +24,8 @@ Etudiants
         <td><a href="/appabs/etudiants/affiche/">{{etudiants.idetudiants}}</a></td>
         <td>{{etudiants.nometudiants}}</td>
         <td>{{etudiants.prenometudiant}}</td>
-        <td>{{etudiants.emailetudiant}</td>
-        <td>{{etudiants.idgroupee.nomgroupe_etudiant}</td>
+        <td>{{etudiants.emailetudiant}}</td>
+        <td>{{etudiants.idgroupee.nomgroupe_etudiant}}</td>
         <td class="text-end">
             <a type="button" class="btn btn-secondary" href="/appabs/etudiants/modif/{{etudiants.idetudiants}}">Modifier</a>
             <a type="button" class="btn btn-danger" href="/appabs/etudiants/supprimer/{{etudiants.idetudiants}}">Supprimer</a>

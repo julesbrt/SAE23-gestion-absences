@@ -11,8 +11,9 @@ Absences
     <thead>
     <tr>
         <th><abbr title="ID">ID</abbr></th>
-        <th>Nom</th>
-        <th>Pays</th>
+        <th>Nom étudiant</th>
+        <th>Prénom étudiant</th>
+        <th>Justification</th>
         <th class="text-end">Actions</th>
     </tr>
     </thead>
@@ -21,7 +22,7 @@ Absences
     <tr>
         <td><a href="/appabs/absences/affiche/">{{absences.idabsences}}</a></td>
         <td>{{absences.idetudiants.nometudiants}}</td>
-        <td>{{absences.idetudiants.nometudiants}}</td>
+        <td>{{absences.idetudiants.prenometudiant}}</td>
         <td>{{absences.docjustcours}}</td>
         <td class="text-end">
             {% comment %} <a type="button" class="btn btn-primary" href="/appabs/details/{{absences.idabsences}}/">Détails</a>
