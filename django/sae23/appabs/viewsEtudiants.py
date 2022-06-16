@@ -7,7 +7,7 @@ from django.forms.models import model_to_dict
 
 def ajout(request):
     if request.method == "POST":
-        form = EtudiantsForm(request.POST)
+        form = EtudiantsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect("/appabs/etudiants/affiche/")

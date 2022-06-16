@@ -36,7 +36,7 @@ class Enseignants(models.Model):
     idenseignants = models.IntegerField(db_column='idEnseignants', primary_key=True)  # Field name made lowercase.
     nomenseignants = models.CharField(db_column='NomEnseignants', max_length=45)  # Field name made lowercase.
     prenomenseignants = models.CharField(db_column='PrenomEnseignants', max_length=45)  # Field name made lowercase.
-    emailenseignants = models.CharField(db_column='EmailEnseignants', max_length=45)  # Field name made lowercase.
+    emailenseignants = models.EmailField(db_column='EmailEnseignants', max_length=45)  # Field name made lowercase.
 
     def __str__(self):
         return f"{self.nomenseignants} {self.prenomenseignants}"
@@ -50,9 +50,9 @@ class Etudiants(models.Model):
     idetudiants = models.IntegerField(primary_key=True)
     nometudiants = models.CharField(db_column='NomEtudiants', max_length=25)  # Field name made lowercase.
     prenometudiant = models.CharField(db_column='PrenomEtudiant', max_length=25)  # Field name made lowercase.
-    emailetudiant = models.CharField(db_column='EmailEtudiant', max_length=45)  # Field name made lowercase.
+    emailetudiant = models.EmailField(db_column='EmailEtudiant', max_length=45)  # Field name made lowercase.
     idgroupee = models.ForeignKey('GroupeEtudiant', models.DO_NOTHING, db_column='idGroupeE')  # Field name made lowercase.
-    photoetudiant = models.CharField(db_column='PhotoEtudiant', max_length=255)  # Field name made lowercase.
+    photoetudiant = models.ImageField(db_column='PhotoEtudiant', max_length=255, upload_to="images/")  # Field name made lowercase.
 
     def __str__(self):
         return f"{self.nometudiants} {self.prenometudiant}"
