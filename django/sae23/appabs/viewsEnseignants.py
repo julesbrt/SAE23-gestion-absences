@@ -32,6 +32,7 @@ def supprimer(request, id):
 
 def updatesauvegarder(request, id):
     eform = EnseignantsForm(request.POST)
+    print(eform)
     if eform.is_valid():
         enseignants = eform.save(commit=False)
         enseignants.idenseignants = id

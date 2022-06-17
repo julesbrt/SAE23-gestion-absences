@@ -7,7 +7,7 @@ Ajout d'un enseignant
 <h1 class="text-center my-3">Ajouter un enseignant</h1>
 
 {% if id != '' %}
-<form action="/appabs/enseignants/updatesauvegarder/" method="post">
+<form action="/appabs/enseignants/updatesauvegarder/{{id}}/" method="post">
 
     {% else %}
     <form action="/appabs/enseignants/affiche/" method="post">
